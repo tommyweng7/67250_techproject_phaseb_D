@@ -1,0 +1,107 @@
+/* Global styles */
+* {
+    padding: 5px;
+    margin: 5px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    line-height: 1.5;
+    font-style: normal;
+}
+
+body {
+    background: #0b0b0c;
+    color: #f5f5f7;
+}
+
+#logo {
+  width: 18%;
+  display: block;
+}
+
+nav a {
+    text-decoration: none;        /* removes underlines */
+    color: #f5f5f7;               /* sets the link color */
+    font-weight: 400;              /* makes the text a bit bolder */
+    padding: 8px 10px;             /* adds spacing inside the link */
+    border: 1px solid transparent; /* invisible border for layout/styling consistency */
+    border-radius: 12px;           /* rounds the corners */
+}
+
+nav a:hover {
+    border-color: #f5f5f7;      /* change border color on hover */
+    background-color: #1a1a1a;  /* optional: subtle background change */
+}
+
+#navselected {
+    color: #92ad70; 
+}
+
+nav a.cta {
+    background-color: #92ad70;
+    color: #0b0b0c;
+    font-weight: 600;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+nav a.cta:hover {
+    background-color: #a0bf85;
+}
+
+footer {
+    border-top: 2px solid #92ad70;
+    padding: 20px 0;
+    text-align: center;
+    color: #dfe4d9;
+    background-color: #0b0b0c;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #92ad70;
+    color: #0b0b0c;
+    width: fit-content;
+}
+
+tr:nth-child(even) {
+    background-color: #1a1a1a;
+    color: #f5f5f7;
+}
+
+tr:nth-child(odd) {
+    background-color: #0b0b0c;
+    color: #f5f5f7;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+td, th {
+    border: 1px solid #333;
+    text-align: left;
+    padding-left: 10px;
+}
+
+form * {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 80%;
+    box-sizing: border-box;
+}
+
