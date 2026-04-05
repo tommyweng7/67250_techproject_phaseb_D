@@ -1,0 +1,493 @@
+/* =========================
+   1. Global Reset
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f7f7f7;
+    color: #222;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================
+   2. Grid Layout
+========================= */
+.container {
+    display: grid;
+    grid-template-areas:
+        "header      header"
+        "nav_bar     nav_bar"
+        "main        right_images"
+        "footer      footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   3. Header
+========================= */
+.header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+#logo {
+    width: 70px;
+    margin-right: 1rem;
+}
+
+.site_title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #111;
+}
+
+
+/* =========================
+   4. Navigation
+========================= */
+.nav_bar {
+    grid-area: nav_bar;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 3rem;
+    background-color: #111;
+}
+
+.nav_bar a {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    transition: opacity 0.2s ease;
+}
+
+.nav_bar a:hover {
+    opacity: 0.6;
+}
+
+.nav_bar a.active {
+    color: #db1212;
+    border-bottom: 3px solid #db1212;
+    padding-bottom: 3px;
+}
+
+/* Hamburger — hidden unless screen is small */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* =========================
+   5. Main Content
+========================= */
+.main {
+    grid-area: main;
+    padding: 3rem;
+    max-width: 65ch;
+    background-color: #ffffff;
+}
+
+.main h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #111;
+}
+
+.main p {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+}
+
+
+/* =========================
+   6. Right-side Images
+========================= */
+.right_images {
+    grid-area: right_images;
+    background-color: #f0f0f0b4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    padding: 2rem 0;
+}
+
+.right_images img {
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   7. Footer
+========================= */
+.footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #111;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+
+/* =========================
+   8. Video Container
+========================= */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* =========================
+   9. Buttons
+========================= */
+button,
+.btn-buy-tickets,
+.buy-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff0000, #881313);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+button:hover,
+.btn-buy-tickets:hover,
+.buy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+button:active,
+.btn-buy-tickets:active,
+.buy-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   10. Carousel
+========================= */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================
+   Smooth Read More Animation
+========================= */
+
+#longIntro {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+#longIntro.show {
+    max-height: 500px; /* must be taller than content */
+    opacity: 1;
+}
+
+#readLess {
+    display: none;
+}
+
+
+
+/* =========================
+   12. Map & Directions
+========================= */
+.map-container {
+    width: 100%;
+    height: 400px;
+    margin-top: 1rem;
+}
+
+.map-actions {
+    margin-top: 1rem;
+}
+
+.btn-directions {
+    display: inline-block;
+    background: linear-gradient(135deg, #00b894, #019875);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-directions:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   13. Tickets — Calendar
+========================= */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    max-width: 500px;
+    margin-top: 1rem;
+}
+
+.calendar-day {
+    padding: 10px;
+    background: #e0ffe0;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-day.closed {
+    background: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.calendar-day.open:hover {
+    background: #a0ffa0;
+}
+
+
+/* =========================
+   14. Responsive Adjustments
+========================= */
+@media (max-width: 900px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "nav_bar"
+            "main"
+            "right_images"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .main        { max-width: 90%; padding: 2rem; }
+    .main h2     { font-size: 1.5rem; }
+    .main p      { font-size: 1rem; line-height: 1.4; }
+
+    .header      { text-align: center; padding: 1rem; }
+    #logo        { width: 150px; height: auto; }
+
+    .nav_bar     { flex-direction: column; align-items: center; gap: 10px; }
+
+    .right_images     { width: 80%; margin: 0 auto 3rem auto; }
+    .right_images img { width: 100%; }
+
+    .main_figure img        { width: 100%; max-width: 600px; margin: 0 auto; display: block; }
+    .main_figure figcaption { font-size: 0.9rem; text-align: center; }
+
+    button, .btn-buy-tickets { width: 100%; max-width: 300px; padding: 12px; margin-top: 8px; }
+
+    .footer { font-size: 0.8rem; padding: 10px; }
+}
+
+@media (max-width: 768px) {
+    .header  { padding: 10px; }
+    .nav_bar { gap: 8px; }
+    .main    { padding: 10px; }
+}
+
+@media (max-width: 650px) {
+    .hamburger { display: block; }
+    .nav_bar a:not(:first-child) { display: none; }
+    .nav_bar.responsive a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+
+/* =========================
+   Buy Tickets Page
+========================= */
+
+/* Schedule table */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.schedule-table th {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    background-color: #f0f0f0;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.ticket-table th,
+.ticket-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.ticket-table th {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    background-color: #f0f0f0;
+}
+
+/* Purchase form — hidden by default */
+.hidden-form {
+    display: none;
+}
+
+/* Purchase form — visible state */
+.purchase-form {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.purchase-form h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #111;
+}
+
+.purchase-form label {
+    display: block;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.purchase-form input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+}
+
+.purchase-form input:focus {
+    outline: none;
+    border-color: #111;
+}
+
+.purchase-form input[readonly] {
+    background-color: #efefef;
+    color: #555;
+}
