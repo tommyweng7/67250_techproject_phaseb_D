@@ -1,0 +1,98 @@
+<!--images from atlasobscura.com and teamlab.com
+video from CBS News on YouTube-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Your Name">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, MonoMuse, Exhibitions">
+    <meta name="description" content="MonoMuse current exhibitions page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse - Exhibitions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="document.getElementById('copyYear').textContent = new Date().getFullYear();">
+
+<div class="container">
+
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        <h1 class="site_title">MonoMuse</h1>
+    </header>
+
+    <!-- FIXED NAV (only one nav element now) -->
+    <nav class="nav_bar" id="mainNav">
+        <button class="hamburger" onclick="toggleNav()">☰</button>
+        <a href="../index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a href="tickets.html">Tickets</a>
+    </nav>
+
+    <main class="main">
+        <section>
+            <h2>Current Exhibitions</h2>
+
+            <article class="exhibition">
+                <h3>Clockwork Dreams: The Art of Automata</h3>
+                <p>
+                    Step into the intricate world of Victorian-era automata, where precision mechanics meet imagination. 
+                    This exhibition highlights the craftsmanship of horologists who brought these mechanical marvels to life.
+                </p>
+            </article>
+
+            <!-- Museum Video Section -->
+            <div class="museum-video">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/0j1bZkp1r8g"
+                        title="Museum Tour"
+                        style="border: none;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <br>
+            </div>
+
+            <article class="exhibition">
+                <h3>Pixels in Motion: Interactive Digital Art</h3>
+                <p>
+                    Experience art that reacts to you. From motion sensors to interactive screens, this exhibition explores how 
+                    technology transforms the way we engage with digital creations.
+                </p>
+            </article>
+
+            <article class="exhibition">
+                <h3>AI and the Future of Creativity</h3>
+                <p>
+                    Discover the intersection of artificial intelligence and artistic expression. This exhibition presents 
+                    works generated with AI tools, questioning the boundaries between human and machine creativity.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <aside class="right_images">
+        <figure>
+            <img src="../static/Automata.png" alt="Automata Exhibit">
+        </figure>
+        <figure>
+            <img src="../static/Girl_screen.png" alt="Digital Art Exhibit">
+        </figure>
+    </aside>
+
+    <footer class="footer">
+        <p>© <span id="copyYear"></span> MonoMuse. All rights reserved.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
