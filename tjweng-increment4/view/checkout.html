@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Your Name">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, MonoMuse, Checkout">
+    <meta name="description" content="MonoMuse Checkout page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse - Checkout</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+
+<body onload="document.getElementById('copyYear').textContent = new Date().getFullYear();">
+
+<div class="container">
+
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        <h1 class="site_title">MonoMuse</h1>
+    </header>
+
+    <nav class="nav_bar">
+        <a href="../index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a href="tickets.html">Tickets</a>
+        <a href="checkout.html">Checkout</a>
+    </nav>
+
+    <main class="main">
+        <h2>Checkout</h2>
+        <p>Please fill out the form below to complete your ticket purchase.</p>
+
+        <form id="checkoutForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="qty">Ticket Quantity:</label>
+            <input type="number" id="qty" name="qty" min="1" required>
+
+            <input class="btn-buy-tickets" type="submit" value="Submit">
+        </form>
+    </main>
+
+    <aside class="right_images">
+        <figure>
+            <img src="../static/Checkout.png" alt="Checkout Illustration" width="1000">
+        </figure>
+    </aside>
+
+    <footer class="footer">
+        <p>© <span id="copyYear"></span> MonoMuse. All rights reserved.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
