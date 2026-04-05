@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Your Name">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, MonoMuse, Tickets">
+    <meta name="description" content="Purchase tickets for MonoMuse Museum">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse - Buy Tickets</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="document.getElementById('copyYear').textContent = new Date().getFullYear();">
+
+<div class="container">
+
+    <header class="header">
+        <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        <h1 class="site_title">MonoMuse</h1>
+    </header>
+
+    <nav class="nav_bar">
+        <button class="hamburger" onclick="toggleNav()">☰</button>
+        <a href="../index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a href="tickets.html">Tickets</a>
+        <a href="checkout.html">Checkout</a>
+    </nav>
+
+    <main class="main">
+        <h2>Buy Tickets</h2>
+        <p>Select a date below and click <strong>Buy Now</strong> to purchase your tickets.</p>
+
+        <!-- Ticket Pricing Table -->
+        <h3>Ticket Prices</h3>
+        <table class="ticket-table">
+            <thead>
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Adult</td>
+                    <td>General admission, ages 18 and over. Under 18 free.</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>Student</td>
+                    <td>Valid student ID required.</td>
+                    <td>$10</td>
+                </tr>
+                <tr>
+                    <td>Member</td>
+                    <td>Member ID required.</td>
+                    <td>$15</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br><br>
+
+        <!-- Monthly Schedule Table -->
+        <h3>Available Dates</h3>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>April 12, 2026</td>
+                    <td>Sunday</td>
+                    <td><button class="buy-btn" onclick="showTicketForm('April 12, 2026')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>April 14, 2026</td>
+                    <td>Tuesday</td>
+                    <td><button class="buy-btn" onclick="showTicketForm('April 14, 2026')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>May 3, 2026</td>
+                    <td>Sunday</td>
+                    <td><button class="buy-btn" onclick="showTicketForm('May 3, 2026')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>May 6, 2026</td>
+                    <td>Wednesday</td>
+                    <td><button class="buy-btn" onclick="showTicketForm('May 6, 2026')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>June 21, 2026</td>
+                    <td>Sunday</td>
+                    <td><button class="buy-btn" onclick="showTicketForm('June 21, 2026')">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>June 23, 2026</td>
+                    <td>Tuesday</td>
+                    <td><button class="buy-btn" onclick="showTicketForm('June 23, 2026')">Buy Now</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+
+        <!-- Purchase Form — hidden by default via CSS class -->
+        <form id="purchaseForm" class="purchase-form hidden-form">
+            <h3>Purchase Tickets</h3>
+
+            <label for="buyName">Name:</label>
+            <input type="text" id="buyName" name="buyName" required>
+
+            <label for="buyEmail">Email:</label>
+            <input type="email" id="buyEmail" name="buyEmail" required>
+
+            <label for="buyQty">Number of Tickets:</label>
+            <input type="number" id="buyQty" name="buyQty" min="1" required>
+
+            <label for="buyDate">Selected Date:</label>
+            <input type="text" id="buyDate" name="buyDate" readonly>
+
+            <br>
+            <button type="submit" class="btn-buy-tickets" onclick="handleTicketSubmit(event)">Submit Order</button>
+        </form>
+
+    </main>
+
+    <aside class="right_images">
+        <figure>
+            <img src="../static/Ticket.png" alt="Tickets at MonoMuse" width="800">
+            <figcaption>Purchase tickets online or at the museum entrance</figcaption>
+        </figure>
+    </aside>
+
+    <footer class="footer">
+        <p>© <span id="copyYear"></span> MonoMuse. All rights reserved.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
